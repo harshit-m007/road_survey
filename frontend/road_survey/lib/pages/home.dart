@@ -43,10 +43,12 @@ class HomePage extends StatelessWidget {
             final option = options[index];
             return GestureDetector(
               onTap: () {
-                // Add navigation logic here
-                print('Tapped on ${option["title"]}');
-                // Navigate to detail page when a list item is tapped
-                Navigator.pushNamed(context, '/detail');
+                if (option["title"] == "NHAI") {
+                  // Navigate to Project Details page
+                  Navigator.pushNamed(context, '/projectDetails');
+                } else {
+                  print('Tapped on ${option["title"]}');
+                }
               },
               child: Card(
                 elevation: 2,
